@@ -1,0 +1,26 @@
+{% extends 'homepage/base.html' %}
+
+{% block title_content %}UpdateFetch Web{% endblock %}
+
+{% block content %}
+    {% for category in categories %}
+    <div class="section">
+        <h2>{{ category.title }}</h2>
+        <div class="content">
+            {% for item in category.items.all %}
+            <div class="item">
+                <h3>{{ item.name }}</h3>
+                <img src="{{ item.image }}" class="item-image-width">
+                <p><a href="{{ item.website }}">Official Site</a></p>
+                <p>Version: {{ item.version }}</p>
+                <p>Downloads:
+                    {% for download in item.downloads.all %}
+                        <a href="{{ download.link }}">{{ download.platform }}</a>{% if not forloop.last %}, {% endif %}
+                    {% endfor %}
+                </p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% endfor %}
+{% endblock %}

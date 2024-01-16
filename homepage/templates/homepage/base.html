@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}UpdateFetch Web{% endblock %}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .title {
+            text-align: center;
+        }
+        .subtitle {
+            text-align: center;
+            font-size: 14px;
+        }
+        .divider {
+            border-top: 1px dashed #000;
+            margin: 20px 0;
+        }
+        .section {
+            margin-top: 20px;
+        }
+        .section h2 {
+            font-size: 24px;
+        }
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .item {
+            width: 30%;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        .item-image-width {
+            width: 200px;
+        }
+        /* Add more styles as needed */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title">
+            <h1>{% block title_content %}{% endblock %}</h1>
+            <p class="subtitle">by AhFei</p>
+            <p class="subtitle">GitHub: <a href="https://github.com/ahfeil/updatefetchWeb">https://github.com/ahfeil/updatefetchWeb</a></p>
+        </div>
+        <div class="divider"></div>
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>
