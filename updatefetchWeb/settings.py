@@ -27,6 +27,23 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['207.60.50.22']
 
+# -- begin self-defined variables --
+undefined_image_url = 'https://ib.ahfei.blog:443/imagesbed/undefined_image_url_200-24-01-05.webp'
+undefined_website = 'https://github.com/ahfeil/updatefetchWeb'
+undefined_version = 'undefined version'
+
+PLATFORM_CHOICES = (
+    ('windows', 'Windows'),
+    ('android', 'Android'),
+    ('linux', 'Linux'),
+)
+
+ARCHITECTURE_CHOICES = (
+    ('amd64', 'AMD64'),
+    ('arm64', 'ARM64'),
+)
+# -- end self-defined variables --
+
 
 # Application definition
 

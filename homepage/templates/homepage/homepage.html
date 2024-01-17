@@ -15,7 +15,7 @@
                 <p>Version: {{ item.version }}</p>
                 <p>Downloads:
                     {% for download in item.downloads.all %}
-                        <a href="{{ download.link }}">{{ download.platform }}</a>{% if not forloop.last %}, {% endif %}
+                        <a href="{{ download.link }}">{{ download.platform }}({{ download.architecture }})</a>{% if not forloop.last %}, {% endif %}
                     {% endfor %}
                 </p>
             </div>
