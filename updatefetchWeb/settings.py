@@ -42,6 +42,19 @@ ARCHITECTURE_CHOICES = (
     ('amd64', 'AMD64'),
     ('arm64', 'ARM64'),
 )
+
+REST_FRAMEWORK = {
+   'DEFAULT_AUTHENTICATION_CLASSES': [
+	   'rest_framework.authentication.TokenAuthentication',
+       'rest_framework.authentication.SessionAuthentication',
+	   # 可供选择的验证的方式...
+   ],
+   'DEFAULT_PERMISSION_CLASSES': [
+	   'rest_framework.permissions.IsAuthenticated',
+	   # 要求必须经过了验证才能使用...
+   ],
+}
+
 # -- end self-defined variables --
 
 
@@ -55,6 +68,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'rest_framework.authtoken'
 ]
 
 MIDDLEWARE = [
