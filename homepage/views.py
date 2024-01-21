@@ -11,7 +11,7 @@ def index(request):
 
 def redirect_to_download(request, app_name, system, architecture):
     """正确顺序应该是，名称-系统-架构"""
-    print(f"{app_name}-{system}-{architecture}")
+    # print(f"{app_name}-{system}-{architecture}")
     # 根据名称获取 Item 对象，不存在直接返回 404
     item = get_object_or_404(Item, name=app_name)
 
@@ -36,7 +36,7 @@ def redirect_to_download(request, app_name, system, architecture):
             architecture = specific_arch['standard_name']
             break
     
-    print(f"{app_name}-{system}-{architecture}")
+    # print(f"{app_name}-{system}-{architecture}")
     # 获取与提供的系统和架构对应的 Download 对象
     download = get_object_or_404(Download, item=item, platform=system, architecture=architecture)
 
