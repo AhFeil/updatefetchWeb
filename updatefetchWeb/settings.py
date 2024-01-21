@@ -43,6 +43,22 @@ ARCHITECTURE_CHOICES = (
     ('arm64', 'ARM64'),
 )
 
+
+# 更灵活的请求最新网址
+AMD64_ALIAS = {'standard_name': 'amd64', 'alias': {"amd64", "x64"}}
+ARM64_ALIAS = {'standard_name': 'arm64', 'alias': {"arm64", "arm"}}
+Windows_ALIAS = {'standard_name': 'windows', 'alias': {"windows", "win"}}
+Android_ALIAS = {'standard_name': 'android', 'alias': {"android", "ad"}}
+Linux_ALIAS = {'standard_name': 'linux', 'alias': {"linux"}}
+
+# 生成一些下面程序需要的数据
+SYSTEM_LIST = [Windows_ALIAS, Android_ALIAS, Linux_ALIAS]
+ARCH_LIST = [AMD64_ALIAS, ARM64_ALIAS]
+ALL_SYSTEM = Windows_ALIAS['alias'] | Android_ALIAS['alias'] | Linux_ALIAS['alias']
+ALL_ARCH = AMD64_ALIAS['alias'] | ARM64_ALIAS['alias']
+ALL_SYSTEM_ARCH = ALL_ARCH | ALL_SYSTEM
+
+
 REST_FRAMEWORK = {
    'DEFAULT_AUTHENTICATION_CLASSES': [
 	   'rest_framework.authentication.TokenAuthentication',
