@@ -1,5 +1,5 @@
 from django.db import models
-from updatefetchWeb.settings import undefined_image_url, undefined_website, undefined_version, PLATFORM_CHOICES, ARCHITECTURE_CHOICES
+from updatefetchWeb.settings import undefined_image_url, undefined_version, PLATFORM_CHOICES, ARCHITECTURE_CHOICES
 
 
 class Category(models.Model):
@@ -17,7 +17,7 @@ class Item(models.Model):
     category = models.ForeignKey(Category, related_name='items', on_delete=models.CASCADE)   # 在前层，实现未定义则划分为 未分类 的类别中，因为这里不能保证类被创建
     name = models.CharField(max_length=50, unique=True)
     image = models.URLField(blank=True, default=undefined_image_url)
-    website = models.URLField(blank=True, default=undefined_website)
+    website = models.URLField(blank=True)
     version = models.CharField(max_length=50, blank=True, default=undefined_version)
 
     def __str__(self):

@@ -11,7 +11,9 @@
             <div class="item">
                 <h3>{{ item.name }}</h3>
                 <img src="{{ item.image }}" class="item-image-width">
+                {% if item.website %}
                 <p><a href="{{ item.website }}">Official Site</a></p>
+                {% endif %}                
                 <p>Version: {{ item.version }}</p>
                 <p>Downloads:
                     {% for download in item.downloads.all %}
