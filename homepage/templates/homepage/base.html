@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="{% static 'homepage/images/favicon.ico' %}" type="image/x-icon">
     <link rel="icon" href="{% static 'homepage/images/favicon.ico' %}" type="image/x-icon">
+    {% block extra_styles %}{% endblock %}
     <title>{% block title %}UpdateFetch Web{% endblock %}</title>
     <style>
         body {
@@ -88,6 +89,7 @@
             <h1>{% block title_content %}{% endblock %}</h1>
             <p class="subtitle">by AhFei</p>
             <p class="subtitle">GitHub: <a href="https://github.com/ahfeil/updatefetchWeb">https://github.com/ahfeil/updatefetchWeb</a></p>
+            <p class="subtitle"> <a href="{% url 'upload:upload' %}">网页暂存区</a> </p>
         </div>
         <div class="divider"></div>
         {% block content %}{% endblock %}

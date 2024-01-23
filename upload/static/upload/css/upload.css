@@ -1,0 +1,53 @@
+.upload-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.file-upload-container {
+    position: relative;
+    width: 100%;
+    /* 移除 height 和 padding-bottom 属性，使用固定高度或者根据内容自适应 */
+    min-height: 150px; /* 根据您的实际需求设置最小高度 */
+    border: 2px dashed #ccc;
+    border-radius: 10px;
+    background-color: #f8f8f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.file-select-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center;
+    user-select: none;
+    /* 增加 margin-bottom 以避免与上传按钮重叠 */
+    margin-bottom: 40px; /* 间距取决于上传按钮的大小 */
+}
+
+.file-select-btn:hover {
+    background-color: #0056b3;
+}
+
+.upload-btn {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
