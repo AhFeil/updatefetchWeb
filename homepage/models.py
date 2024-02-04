@@ -19,6 +19,7 @@ class Item(models.Model):
     image = models.URLField(blank=True, default=undefined_image_url)
     website = models.URLField(blank=True)
     version = models.CharField(max_length=50, blank=True, default=undefined_version)
+    last_modified = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         """返回模型的字符串表示。"""

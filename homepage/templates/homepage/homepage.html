@@ -15,6 +15,7 @@
                 <p><a href="{{ item.website }}">Official Site</a></p>
                 {% endif %}                
                 <p>Version: {{ item.version }}</p>
+                <p>Update: {{ item.last_modified }}</p>
                 <p>Downloads:
                     {% for download in item.downloads.all %}
                         <a href="{{ download.link }}" target="_blank">{{ download.platform }}({{ download.architecture }})</a>{% if not forloop.last %}, {% endif %}
