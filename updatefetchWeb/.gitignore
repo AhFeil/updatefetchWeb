@@ -5,7 +5,7 @@ __pycache__/
 *$py.class
 
 # mine
-settings.py
+local_settings.py
 
 # C extensions
 *.so
